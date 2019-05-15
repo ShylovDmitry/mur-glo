@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<h2>Our teachers</h2>
+
+<ul>
+{{#each teachers as |teacher|}}
+	<li><a href="/{{teacher.id}}">{{teacher.name}}</a></li>
+{{/each}}
+</ul>

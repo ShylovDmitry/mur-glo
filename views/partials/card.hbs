@@ -1,0 +1,33 @@
+<div class="class-card">
+	<a href="#">
+		<div class="class-card__header" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(30, 30, 40, 0.3) 100%), url({{thumbnailImage}});"></div>
+	</a>
+
+	<div class="class-card__copy-container">
+		<div class="class-card__copy-header">
+			<a href="#">
+				<div class="class-card__content-type f-gray-6">class</div>
+			</a>
+
+			<a href="#" class="class-card__stat f-link--no-underline f-gray-6">Level {{level}}</a>
+
+			<span class="class-card__stat class-card__stat--duration f-gray-6">{{duration}} min</span>
+		</div>
+
+		<div class="class-card__copy-body">
+			<span class="class-card__content-title f-link--no-underline">{{title}}</span>
+
+			<div class="class-card__content-subtitle f-gray-6">
+				<span class="f-gray-6 f-link--no-underline">{{style.name}}</span>
+
+				with
+
+				<span class="f-gray-6 f-link--no-underline">{{teacher.name}}</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="class-card__description f-gray-6">{{description}}</div>
+
+	<div class="class-card__gradient"></div>
+</div>
