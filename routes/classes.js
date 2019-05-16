@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
 		if (req.query.teacherId) {
 			classQuery.where('teacher', req.query.teacherId);
 		}
-		res.json(await classQuery);
+		res.json(await classQuery.eager('[styleData, teacherData]'));
 	}	
 	catch (e) {
 		return next({ status : 500 });
