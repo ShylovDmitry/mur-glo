@@ -1,5 +1,10 @@
 <h1>{{teacher.name}}</h1>
 
-<!-- TODO: Adjust this template to arrange this teacher's classes, grouped by style -->
-
-{{> card}}
+{{#each groupedClasses}}
+    <h3>{{name}}</h3>
+    <div class="classes">
+        {{#each classes}}
+            {{> card}}
+        {{/each}}
+    </div>
+{{/each}}

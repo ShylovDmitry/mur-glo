@@ -29,8 +29,8 @@ a {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	display: flex;
-	flex-direction: column;
+	/*display: flex;*/
+	/*flex-direction: column;*/
 	width: 100%;
 	max-width: 320px;
 	height: 320px;
@@ -40,6 +40,8 @@ a {
 	overflow: hidden;
 	cursor: pointer;
 	transition: box-shadow 0.2s ease-in-out;
+
+	margin-bottom: 20px;
 }
 
 .class-card:hover .class-card__header {
@@ -160,4 +162,13 @@ a {
 	height: 55px;
 	background: linear-gradient(to top, #fff 24px, rgba(255, 255, 255, 0));
 	z-index: 1;
+}
+
+
+
+
+.classes {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
 }
