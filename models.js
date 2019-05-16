@@ -12,28 +12,16 @@ let sqlite = require('knex')({
 Model.knex(sqlite);
 
 class Class extends Model {
-	static get idColumn() {
-		return 'id';
-	}
-
 	static get tableName() {
 		return 'classes';
 	}
 }
 class Style extends Model {
-	static get idColumn() {
-		return 'id';
-	}
-
 	static get tableName() {
 		return 'styles';
 	}
 }
 class Teacher extends Model {
-	static get idColumn() {
-		return 'id';
-	}
-
 	static get tableName() {
 		return 'teachers';
 	}
