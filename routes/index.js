@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
 
 		res.render('index', { 
 			title: 'Glo',
-			teachers
+			teachers: teachers
 		});
 	}
 	catch (e) {
@@ -27,37 +27,18 @@ router.get('/:id', async (req, res, next) => {
 		let teacher = await request.get(`${config.baseUrl}/api/teachers/${req.params.id}`).type('json');
 		teacher = teacher.body;
 
-		let classes = await request.get(`${config.baseUrl}/api/classes/?teacherId=${req.params.id}`).type('json');
-		classes = classes.body;
-
-		const groupedClasses = groupClasses(classes);
+		// TODO Similar to above teacher request, make a request to the API 
+		// to retrieve this teacher's classes
 
 		res.render('detail', { 
 			title: 'Glo',
-			teacher,
-			groupedClasses
+			teacher: teacher,
+			classes: [] // TODO Adjust this view object to include teacher's classes
 		});
 	}
 	catch (e) {
 		return next({ status : 500 });
 	}
 });
-
-function groupClasses(classes) {
-	const groupedClasses = [];
-
-	for (let classItem of classes) {
-		const styleId = classItem.styleData.id;
-		if (typeof groupedClasses[styleId] === 'undefined') {
-			groupedClasses[styleId] = {
-				...classItem.styleData,
-				classes: []
-			};
-		}
-		groupedClasses[styleId].classes.push(classItem);
-	}
-
-	return groupedClasses;
-}
 
 module.exports = router;
